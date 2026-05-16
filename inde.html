@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kulit Tahu Prime | Premium Kulit Kembang Tahu</title>
+  <meta name="description" content="Kulit Tahu Prime menghadirkan kulit kembang tahu premium berkualitas tinggi untuk rumah tangga, UMKM, restoran, dan distributor." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#C9A227',
+            cream: '#F7F1E3',
+            brown: '#6B4F3A'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .glass {
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hover-card {
+      transition: all 0.3s ease;
+    }
+
+    .hover-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    .gold-gradient {
+      background: linear-gradient(135deg, #C9A227, #E8C547);
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      margin: 14px auto 0;
+      border-radius: 999px;
+      background: #C9A227;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center text-white font-bold text-lg shadow-lg">
+          KP
+        </div>
+        <div>
+          <h1 class="font-bold text-xl text-brown">Kulit Tahu Prime</h1>
+          <p class="text-xs text-gray-500">Premium Soy Skin Factory</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+        <a href="#about" class="hover:text-gold transition">Tentang</a>
+        <a href="#unggulan" class="hover:text-gold transition">Keunggulan</a>
+        <a href="#produk" class="hover:text-gold transition">Produk</a>
+        <a href="#gallery" class="hover:text-gold transition">Galeri</a>
+        <a href="#testimoni" class="hover:text-gold transition">Testimoni</a>
+        <a href="#contact" class="hover:text-gold transition">Kontak</a>
+      </nav>
+
+      <a href="https://wa.me/6281234567890" class="hidden md:inline-flex bg-gold hover:bg-yellow-600 transition text-white px-5 py-3 rounded-full font-semibold shadow-lg">
+        Pesan Sekarang
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-bg min-h-screen flex items-center text-white pt-28">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 glass">
+          <span>⭐</span>
+          <span class="text-sm">Premium Quality Factory Indonesia</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+          Kulit Kembang Tahu <span class="text-yellow-400">Premium Berkualitas</span>
+        </h1>
+
+        <p class="text-lg text-gray-200 leading-relaxed mb-8 max-w-2xl">
+          Diproduksi higienis dengan kualitas terbaik untuk kebutuhan rumah tangga, UMKM, restoran, dan distributor.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="https://wa.me/6281234567890" class="bg-gold hover:bg-yellow-600 transition px-8 py-4 rounded-full font-semibold shadow-2xl">
+            Pesan Sekarang
+          </a>
+
+          <a href="#produk" class="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition font-semibold">
+            Lihat Produk
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=1200&auto=format&fit=crop" alt="Kulit tahu premium" class="rounded-3xl shadow-2xl border border-white/20" />
+
+        <div class="absolute -bottom-8 -left-6 bg-white text-black rounded-2xl p-6 shadow-2xl w-64">
+          <h3 class="font-bold text-lg text-brown">100% Higienis</h3>
+          <p class="text-sm text-gray-600 mt-2">Diproses dengan standar kualitas premium dan modern.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <img loading="lazy" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1200&auto=format&fit=crop" alt="Factory" class="rounded-3xl shadow-xl" />
+      </div>
+
+      <div>
+        <span class="text-gold font-semibold uppercase tracking-widest">Tentang Kami</span>
+
+        <h2 class="text-4xl font-bold mt-4 mb-6 text-brown leading-snug">
+          Supplier Kulit Kembang Tahu Premium Indonesia
+        </h2>
+
+        <p class="text-gray-700 leading-relaxed text-lg mb-8">
+          Kulit Tahu Prime menghadirkan kulit kembang tahu premium dengan tekstur lembut, gurih alami, dan kualitas terbaik. Diproduksi secara higienis menggunakan bahan pilihan untuk menjaga rasa dan kualitas di setiap produk.
+        </p>
+
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl p-5 shadow hover-card text-center">
+            <div class="text-4xl mb-3">🧼</div>
+            <h3 class="font-semibold">Higienis</h3>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 shadow hover-card text-center">
+            <div class="text-4xl mb-3">🏆</div>
+            <h3 class="font-semibold">Premium</h3>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 shadow hover-card text-center">
+            <div class="text-4xl mb-3">🚚</div>
+            <h3 class="font-semibold">Distribusi Besar</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keunggulan -->
+  <section id="unggulan" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold section-title text-brown">Keunggulan Kami</h2>
+        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+          Produk berkualitas premium dengan pelayanan profesional untuk kebutuhan bisnis Anda.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="hover-card bg-cream rounded-3xl p-8 shadow-md">
+          <div class="text-5xl mb-4">✨</div>
+          <h3 class="font-bold text-xl mb-3">Higienis & Fresh</h3>
+          <p class="text-gray-600">Diproduksi dengan proses modern dan standar kebersihan tinggi.</p>
+        </div>
+
+        <div class="hover-card bg-cream rounded-3xl p-8 shadow-md">
+          <div class="text-5xl mb-4">🌱</div>
+          <h3 class="font-bold text-xl mb-3">Bahan Berkualitas</h3>
+          <p class="text-gray-600">Menggunakan bahan pilihan untuk menghasilkan rasa terbaik.</p>
+        </div>
+
+        <div class="hover-card bg-cream rounded-3xl p-8 shadow-md">
+          <div class="text-5xl mb-4">❄️</div>
+          <h3 class="font-bold text-xl mb-3">Cocok Frozen Food</h3>
+          <p class="text-gray-600">Tekstur tetap terjaga dan tahan untuk kebutuhan frozen food.</p>
+        </div>
+
+        <div class="hover-card bg-cream rounded-3xl p-8 shadow-md">
+          <div class="text-5xl mb-4">🏭</div>
+          <h3 class="font-bold text-xl mb-3">Harga Pabrik</h3>
+          <p class="text-gray-600">Langsung dari pabrik dengan harga kompetitif dan kualitas premium.</p>
+        </div>
+
+        <div class="hover-card bg-cream rounded-3xl p-8 shadow-md">
+          <div class="text-5xl mb-4">🛒</div>
+          <h3 class="font-bold text-xl mb-3">Grosir & Retail</h3>
+          <p class="text-gray-600">Melayani pembelian partai besar maupun kecil.</p>
+        </div>
+
+        <div class="hover-card bg-cream rounded-3xl p-8 shadow-md">
+          <div class="text-5xl mb-4">⚡</div>
+          <h3 class="font-bold text-xl mb-3">Pengiriman Cepat</h3>
+          <p class="text-gray-600">Distribusi cepat dan aman ke berbagai wilayah Indonesia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produk -->
+  <section id="produk" class="py-24 bg-[#fffaf2]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold section-title text-brown">Produk Premium</h2>
+        <p class="text-gray-600 mt-6">Pilihan produk terbaik untuk kebutuhan kuliner dan bisnis Anda.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover-card">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop" class="h-64 w-full object-cover" alt="Fresh" />
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-3">Kulit Kembang Tahu Fresh</h3>
+            <p class="text-gray-600 mb-5">Kulit tahu segar berkualitas premium dengan tekstur lembut.</p>
+            <a href="https://wa.me/6281234567890" class="block text-center bg-gold hover:bg-yellow-600 text-white py-3 rounded-xl font-semibold transition">
+              Pesan WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover-card">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1200&auto=format&fit=crop" class="h-64 w-full object-cover" alt="Frozen" />
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-3">Kulit Tahu Frozen</h3>
+            <p class="text-gray-600 mb-5">Praktis dan tahan lama untuk kebutuhan frozen food.</p>
+            <a href="https://wa.me/6281234567890" class="block text-center bg-gold hover:bg-yellow-600 text-white py-3 rounded-xl font-semibold transition">
+              Pesan WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover-card">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1559847844-d721426d6edc?q=80&w=1200&auto=format&fit=crop" class="h-64 w-full object-cover" alt="Gulung" />
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-3">Kulit Tahu Gulung</h3>
+            <p class="text-gray-600 mb-5">Cocok untuk suki, dimsum, dan berbagai menu restoran.</p>
+            <a href="https://wa.me/6281234567890" class="block text-center bg-gold hover:bg-yellow-600 text-white py-3 rounded-xl font-semibold transition">
+              Pesan WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover-card">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1200&auto=format&fit=crop" class="h-64 w-full object-cover" alt="Siap Masak" />
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-3">Kulit Tahu Siap Masak</h3>
+            <p class="text-gray-600 mb-5">Praktis digunakan untuk kebutuhan rumah tangga dan UMKM.</p>
+            <a href="https://wa.me/6281234567890" class="block text-center bg-gold hover:bg-yellow-600 text-white py-3 rounded-xl font-semibold transition">
+              Pesan WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold section-title text-brown">Galeri Produksi</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=1200&auto=format&fit=crop" class="rounded-3xl h-72 w-full object-cover hover:scale-105 transition duration-500" alt="Produksi" />
+
+        <img loading="lazy" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1200&auto=format&fit=crop" class="rounded-3xl h-72 w-full object-cover hover:scale-105 transition duration-500" alt="Packaging" />
+
+        <img loading="lazy" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" class="rounded-3xl h-72 w-full object-cover hover:scale-105 transition duration-500" alt="Gudang" />
+
+        <img loading="lazy" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop" class="rounded-3xl h-72 w-full object-cover hover:scale-105 transition duration-500" alt="Produk Jadi" />
+
+        <img loading="lazy" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop" class="rounded-3xl h-72 w-full object-cover hover:scale-105 transition duration-500" alt="Pengiriman" />
+
+        <img loading="lazy" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=1200&auto=format&fit=crop" class="rounded-3xl h-72 w-full object-cover hover:scale-105 transition duration-500" alt="Factory" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section id="testimoni" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold section-title text-brown">Apa Kata Customer</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-white rounded-3xl p-8 shadow-lg hover-card">
+          <div class="text-yellow-500 text-2xl mb-4">★★★★★</div>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            “Kualitas kulit tahunya sangat bagus dan konsisten. Cocok untuk kebutuhan restoran kami.”
+          </p>
+          <div>
+            <h4 class="font-bold">Restoran Suki Premium</h4>
+            <p class="text-sm text-gray-500">Customer Restoran</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-lg hover-card">
+          <div class="text-yellow-500 text-2xl mb-4">★★★★★</div>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            “Packaging rapi dan pengiriman cepat. Sangat cocok untuk reseller frozen food.”
+          </p>
+          <div>
+            <h4 class="font-bold">Dina Frozen Store</h4>
+            <p class="text-sm text-gray-500">Reseller</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-lg hover-card">
+          <div class="text-yellow-500 text-2xl mb-4">★★★★★</div>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            “Harga pabrik dengan kualitas premium. Repeat order terus untuk usaha UMKM saya.”
+          </p>
+          <div>
+            <h4 class="font-bold">UMKM Dapur Nusantara</h4>
+            <p class="text-sm text-gray-500">UMKM Kuliner</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-brown text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,white,transparent_40%)]"></div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <h2 class="text-5xl font-extrabold leading-tight mb-6">
+        Siap Menjadi Supplier Kulit Tahu Terpercaya Anda
+      </h2>
+
+      <p class="text-lg text-gray-200 mb-10">
+        Dapatkan produk premium langsung dari pabrik dengan kualitas terbaik dan harga kompetitif.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-5">
+        <a href="https://wa.me/6281234567890" class="bg-gold hover:bg-yellow-600 px-8 py-4 rounded-full font-bold shadow-xl transition">
+          Hubungi WhatsApp
+        </a>
+
+        <a href="#produk" class="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition font-bold">
+          Order Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
+
+      <div>
+        <h2 class="text-4xl font-bold text-brown mb-6">Hubungi Kami</h2>
+        <p class="text-gray-600 mb-10">
+          Siap melayani kebutuhan grosir, retail, restoran, UMKM, dan distributor di seluruh Indonesia.
+        </p>
+
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="text-2xl">📍</div>
+            <div>
+              <h4 class="font-bold">Alamat</h4>
+              <p class="text-gray-600">Jl. Industri Kuliner No. 88, Indonesia</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="text-2xl">📞</div>
+            <div>
+              <h4 class="font-bold">WhatsApp</h4>
+              <p class="text-gray-600">+62 812-3456-7890</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="text-2xl">✉️</div>
+            <div>
+              <h4 class="font-bold">Email</h4>
+              <p class="text-gray-600">info@kulittahuprime.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 rounded-3xl overflow-hidden shadow-lg">
+          <iframe class="w-full h-80" src="https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+
+      <div class="bg-cream rounded-3xl p-10 shadow-lg">
+        <h3 class="text-3xl font-bold text-brown mb-8">Form Kontak</h3>
+
+        <form class="space-y-6">
+          <input type="text" placeholder="Nama Lengkap" class="w-full px-5 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold" />
+
+          <input type="email" placeholder="Email" class="w-full px-5 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold" />
+
+          <input type="text" placeholder="Nomor WhatsApp" class="w-full px-5 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold" />
+
+          <textarea rows="5" placeholder="Pesan Anda" class="w-full px-5 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold"></textarea>
+
+          <button class="w-full bg-gold hover:bg-yellow-600 transition text-white py-4 rounded-2xl font-bold shadow-lg">
+            Kirim Pesan
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#2e2118] text-white py-12">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+
+      <div>
+        <h3 class="text-2xl font-bold m
