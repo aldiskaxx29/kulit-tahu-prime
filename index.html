@@ -239,60 +239,506 @@
   <!-- Produk -->
   <section id="produk" class="py-24 bg-[#fffaf2]">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold section-title text-brown">Produk Premium</h2>
-        <p class="text-gray-600 mt-6">Pilihan produk terbaik untuk kebutuhan kuliner dan bisnis Anda.</p>
+      <div class="text-center mb-6">
+        <h2 class="text-4xl font-bold section-title text-brown">Daftar Produk & Harga</h2>
+        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Pilihan lengkap kulit kembang tahu premium dalam berbagai ukuran. Harga terbaik langsung dari pabrik — hubungi kami untuk penawaran spesial grosir.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Filter Tab -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button onclick="filterProduk('semua')" id="tab-semua" class="prod-tab active-tab px-5 py-2 rounded-full font-semibold text-sm border-2 border-gold bg-gold text-white transition">Semua</button>
+        <button onclick="filterProduk('persegi')" id="tab-persegi" class="prod-tab px-5 py-2 rounded-full font-semibold text-sm border-2 border-gold text-gold bg-transparent hover:bg-gold hover:text-white transition">Persegi</button>
+        <button onclick="filterProduk('lingkaran')" id="tab-lingkaran" class="prod-tab px-5 py-2 rounded-full font-semibold text-sm border-2 border-gold text-gold bg-transparent hover:bg-gold hover:text-white transition">½ Lingkaran</button>
+      </div>
 
-        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover-card">
-          <img loading="lazy" src="assets/kulit-tahu-prime-8x8-50.png" class="h-64 w-full object-cover" alt="Fresh" />
-          <div class="p-6">
-            <h3 class="font-bold text-xl mb-3">Kulit Kembang Tahu Fresh</h3>
-            <p class="text-gray-600 mb-5">Kulit tahu segar berkualitas premium dengan tekstur lembut.</p>
-            <a href="https://wa.me/62895334930931" class="block text-center bg-gold hover:bg-yellow-600 text-white py-3 rounded-xl font-semibold transition">
-              Pesan WhatsApp
-            </a>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7" id="produkGrid">
+
+        <!-- 8x8 cm -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-8x8-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 8x8 cm" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 8 × 8 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 8 × 8 cm</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Ukuran kecil, cocok untuk pangsit, dimsum, dan camilan kecil.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih</p>
+                  <p class="text-brown font-bold text-base">Rp 22.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 19.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%208x8%20cm%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover-card">
-          <img loading="lazy" src="assets/kulit-tahu-prime-10x10-50-2.png" class="h-64 w-full object-cover" alt="Frozen" />
-          <div class="p-6">
-            <h3 class="font-bold text-xl mb-3">Kulit Tahu Frozen</h3>
-            <p class="text-gray-600 mb-5">Praktis dan tahan lama untuk kebutuhan frozen food.</p>
-            <a href="https://wa.me/62895334930931" class="block text-center bg-gold hover:bg-yellow-600 text-white py-3 rounded-xl font-semibold transition">
-              Pesan WhatsApp
-            </a>
+        <!-- 10x10 cm -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-10x10-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 10x10 cm" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 10 × 10 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 10 × 10 cm</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Ukuran serbaguna untuk pangsit, lumpia, dan berbagai olahan.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih</p>
+                  <p class="text-brown font-bold text-base">Rp 25.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 22.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%2010x10%20cm%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover-card">
-          <img loading="lazy" src="assets/kulit-tahu-prime-15x15-50.png" class="h-64 w-full object-cover" alt="Gulung" />
-          <div class="p-6">
-            <h3 class="font-bold text-xl mb-3">Kulit Tahu Gulung</h3>
-            <p class="text-gray-600 mb-5">Cocok untuk suki, dimsum, dan berbagai menu restoran.</p>
-            <a href="https://wa.me/62895334930931" class="block text-center bg-gold hover:bg-yellow-600 text-white py-3 rounded-xl font-semibold transition">
-              Pesan WhatsApp
-            </a>
+        <!-- 12x12 cm -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-12x12-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 12x12 cm" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 12 × 12 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 12 × 12 cm</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Ukuran medium, ideal untuk berbagai olahan rumah tangga dan UMKM.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih</p>
+                  <p class="text-brown font-bold text-base">Rp 35.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 33.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%2012x12%20cm%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover-card">
-          <img loading="lazy" src="assets/kulit-tahu-prime-30x20-20.png" class="h-64 w-full object-cover" alt="Siap Masak" />
-          <div class="p-6">
-            <h3 class="font-bold text-xl mb-3">Kulit Tahu Siap Masak</h3>
-            <p class="text-gray-600 mb-5">Praktis digunakan untuk kebutuhan rumah tangga dan UMKM.</p>
-            <a href="https://wa.me/62895334930931" class="block text-center bg-gold hover:bg-yellow-600 text-white py-3 rounded-xl font-semibold transition">
-              Pesan WhatsApp
-            </a>
+        <!-- 14x14 cm -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-14x14-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 14x14 cm" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 14 × 14 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 14 × 14 cm</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Cocok untuk tahu isi, bakwan tahu, dan gorengan lainnya.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih</p>
+                  <p class="text-brown font-bold text-base">Rp 45.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 43.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%2014x14%20cm%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15x15 cm -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-15x15-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 15x15 cm" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 15 × 15 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 15 × 15 cm</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Ukuran populer untuk berbagai kebutuhan masak sehari-hari.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih</p>
+                  <p class="text-brown font-bold text-base">Rp 50.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 47.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%2015x15%20cm%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 20x15 cm -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-20x15-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 20x15 cm" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 20 × 15 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 20 × 15 cm</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Ukuran persegi panjang, ideal untuk kulit lumpia dan sejenisnya.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih</p>
+                  <p class="text-brown font-bold text-base">Rp 70.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 65.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%2020x15%20cm%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 20x20 cm -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-20x20-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 20x20 cm" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 20 × 20 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 20 × 20 cm</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Ukuran besar, cocok untuk suki dan steamboat premium.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih</p>
+                  <p class="text-brown font-bold text-base">Rp 75.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 70.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%2020x20%20cm%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 25x25 cm -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-25x25-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 25x25 cm" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 25 × 25 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 25 × 25 cm</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Ukuran ekstra besar untuk kebutuhan restoran dan katering.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih</p>
+                  <p class="text-brown font-bold text-base">Hubungi Kami</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Mix</p>
+                  <p class="text-gold font-bold text-base">Hubungi Kami</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%2025x25%20cm%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 30x20 cm - Isi 50 -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-30x20-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 30x20 cm isi 50" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 30 × 20 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 30 × 20 cm</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Format besar memanjang, cocok untuk berbagai olahan premium.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih</p>
+                  <p class="text-brown font-bold text-base">Rp 125.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 125.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%2030x20%20cm%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 30x20 cm - Isi 20 -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-30x20-20.png" class="h-56 w-full object-cover" alt="Kulit Tahu 30x20 cm isi 20" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+            <span class="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Hemat</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 30 × 20 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 30 × 20 cm</span>
+              <span class="inline-flex items-center gap-1 bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full border border-green-200">📦 20 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Pilihan hemat isi 20 lembar, cocok untuk rumah tangga & coba produk.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih</p>
+                  <p class="text-brown font-bold text-base">Rp 125.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 125.000</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%2030x20%20cm%20isi%2020%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 30x25 cm -->
+        <div class="prod-card persegi bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-30x25-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 30x25 cm" />
+            <span class="absolute top-3 left-3 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Persegi</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu 30 × 25 cm</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 30 × 25 cm</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Ukuran jumbo terlengkap untuk kebutuhan industri dan grosir.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Putih / Mix</p>
+                  <p class="text-brown font-bold text-base">Hubungi Kami</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">&nbsp;</p>
+                  <p class="text-gold font-bold text-base">&nbsp;</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%2030x25%20cm%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1/2 Lingkaran MIX - Isi 50 -->
+        <div class="prod-card lingkaran bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-1-2-50.png" class="h-56 w-full object-cover" alt="Kulit Tahu 1/2 Lingkaran Mix 50" />
+            <span class="absolute top-3 left-3 bg-brown text-white text-xs font-bold px-3 py-1 rounded-full">½ Lingkaran</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu ½ Lingkaran MIX</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 ½ Lingkaran</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Bentuk setengah lingkaran warna mix, cocok untuk dimsum dan pangsit.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Harga Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 125.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Isi</p>
+                  <p class="text-brown font-bold text-base">50 Lembar</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%201%2F2%20Lingkaran%20MIX%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1/2 Lingkaran MIX - Isi 70 -->
+        <div class="prod-card lingkaran bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-1-2-70.png" class="h-56 w-full object-cover" alt="Kulit Tahu 1/2 Lingkaran Mix 70" />
+            <span class="absolute top-3 left-3 bg-brown text-white text-xs font-bold px-3 py-1 rounded-full">½ Lingkaran</span>
+            <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">Terlaris</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu ½ Lingkaran MIX</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 ½ Lingkaran</span>
+              <span class="inline-flex items-center gap-1 bg-red-50 text-red-700 text-xs font-semibold px-3 py-1 rounded-full border border-red-200">📦 70 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Isi lebih banyak 70 lembar, pilihan terbaik untuk bisnis dan restoran.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Harga Mix</p>
+                  <p class="text-gold font-bold text-base">Rp 125.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Isi</p>
+                  <p class="text-brown font-bold text-base">70 Lembar</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%201%2F2%20Lingkaran%20MIX%20isi%2070%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1/2 Lingkaran PUTIH -->
+        <div class="prod-card lingkaran bg-white rounded-3xl overflow-hidden shadow-lg hover-card flex flex-col">
+          <div class="relative">
+            <img loading="lazy" src="assets/kulit-tahu-prime-1-2-50-putih.png" class="h-56 w-full object-cover" alt="Kulit Tahu 1/2 Lingkaran Putih" />
+            <span class="absolute top-3 left-3 bg-brown text-white text-xs font-bold px-3 py-1 rounded-full">½ Lingkaran</span>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold text-lg text-brown mb-2">Kulit Tahu ½ Lingkaran PUTIH</h3>
+            <div class="flex gap-3 mb-3">
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📐 ½ Lingkaran</span>
+              <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200">📦 50 Lembar</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4 flex-1">Varian putih bersih, tampilan premium untuk sajian istimewa Anda.</p>
+            <div class="border-t border-gray-100 pt-4">
+              <div class="flex justify-between items-center mb-3">
+                <div>
+                  <p class="text-xs text-gray-400">Harga Putih</p>
+                  <p class="text-brown font-bold text-base">Rp 145.000</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-400">Isi</p>
+                  <p class="text-gold font-bold text-base">50 Lembar</p>
+                </div>
+              </div>
+              <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20pesan%20Kulit%20Tahu%201%2F2%20Lingkaran%20PUTIH%20isi%2050%20Lembar." 
+                 class="block text-center bg-gold hover:bg-yellow-600 text-white py-2.5 rounded-xl font-semibold text-sm transition">
+                🛒 Pesan via WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 
       </div>
+
+      <!-- Info Banner -->
+      <div class="mt-14 bg-gradient-to-r from-brown to-[#4a3426] rounded-3xl p-8 text-white text-center shadow-xl">
+        <div class="text-4xl mb-3">💬</div>
+        <h3 class="text-2xl font-bold mb-2">Dapatkan Harga Terbaik!</h3>
+        <p class="text-gray-200 mb-5">Hubungi kami via WhatsApp untuk mendapatkan harga spesial grosir, diskon partai, dan penawaran terbaik langsung dari pabrik.</p>
+        <a href="https://wa.me/62895334930931?text=Halo%20Kulit%20Tahu%20Prime%2C%20saya%20ingin%20tanya%20daftar%20harga%20lengkap%20produk%20Anda." 
+           class="inline-flex items-center gap-2 bg-gold hover:bg-yellow-500 transition text-white font-bold px-8 py-4 rounded-full shadow-lg text-lg">
+          📲 Chat WhatsApp Sekarang
+        </a>
+      </div>
+
     </div>
   </section>
+
+  <script>
+    function filterProduk(kategori) {
+      const cards = document.querySelectorAll('.prod-card');
+      const tabs = document.querySelectorAll('.prod-tab');
+      tabs.forEach(t => {
+        t.classList.remove('bg-gold', 'text-white', 'active-tab');
+        t.classList.add('text-gold', 'bg-transparent');
+      });
+      const activeTab = document.getElementById('tab-' + kategori);
+      activeTab.classList.add('bg-gold', 'text-white', 'active-tab');
+      activeTab.classList.remove('text-gold', 'bg-transparent');
+      cards.forEach(card => {
+        if (kategori === 'semua' || card.classList.contains(kategori)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 
   <!-- Gallery -->
   <section id="gallery" class="py-24 bg-white">
