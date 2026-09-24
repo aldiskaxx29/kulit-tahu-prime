@@ -1206,7 +1206,106 @@ Terima kasih.
 
   // Tutup dengan tombol Escape
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') tutupModalKatalog();
+    if (e.key === 'Escape') { tutupModalKatalog(); tutupLightbox(); }
+  });
+</script>
+
+<!-- ===== LIGHTBOX GAMBAR PRODUK ===== -->
+<style>
+  #lightbox { transition: opacity 0.25s ease; }
+  #lightboxImg { transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), opacity 0.25s ease; }
+  .prod-card img { cursor: zoom-in; }
+</style>
+
+<div id="lightbox" class="fixed inset-0 z-[9998] hidden items-center justify-center" style="opacity:0;" onclick="tutupLightbox()">
+  <div class="absolute inset-0 bg-black/85 backdrop-blur-md"></div>
+  <div class="relative z-10 flex flex-col items-center max-w-4xl w-full mx-4" onclick="event.stopPropagation()">
+    <button onclick="tutupLightbox()" style="position:absolute;top:-3rem;right:0;" class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white text-2xl flex items-center justify-center transition font-bold">&times;</button>
+    <button id="lbPrev" onclick="navigasiLightbox(-1)" style="position:absolute;left:0;top:50%;transform:translateY(-50%) translateX(-3.5rem);" class="w-11 h-11 rounded-full bg-white/20 hover:bg-[#C9A227] text-white text-2xl flex items-center justify-center transition">&#8249;</button>
+    <img id="lightboxImg" src="" alt="" style="transform:scale(0.92);opacity:0;max-height:75vh;max-width:100%;border-radius:1rem;box-shadow:0 25px 60px rgba(0,0,0,0.5);object-fit:contain;border:2px solid rgba(255,255,255,0.15);" />
+    <div class="mt-5 text-center text-white">
+      <p id="lightboxCaption" class="font-semibold text-lg"></p>
+      <p id="lightboxCounter" class="text-sm mt-1" style="color:rgba(255,255,255,0.55);"></p>
+    </div>
+    <button id="lbNext" onclick="navigasiLightbox(1)" style="position:absolute;right:0;top:50%;transform:translateY(-50%) translateX(3.5rem);" class="w-11 h-11 rounded-full bg-white/20 hover:bg-[#C9A227] text-white text-2xl flex items-center justify-center transition">&#8250;</button>
+  </div>
+</div>
+
+<script>
+  var lbGambar = [], lbIndex = 0;
+  document.addEventListener('DOMContentLoaded', function () {
+    var cards = document.querySelectorAll('.prod-card');
+    cards.forEach(function (card) {
+      var img = card.querySelector('img');
+      if (!img) return;
+      var h3 = card.querySelector('h3');
+      var judul = h3 ? h3.textContent.trim() : (img.alt || 'Produk');
+      var idx = lbGambar.length;
+      lbGambar.push({ src: img.getAttribute('src'), judul: judul });
+      img.addEventListener('click', function (e) { e.preventDefault(); bukaLightbox(idx); });
+    });
+    updateNav();
+  });
+
+  function bukaLightbox(idx) {
+    lbIndex = idx;
+    var lb = document.getElementById('lightbox');
+    var img = document.getElementById('lightboxImg');
+    img.src = lbGambar[idx].src;
+    document.getElementById('lightboxCaption').textContent = lbGambar[idx].judul;
+    document.getElementById('lightboxCounter').textContent = (idx + 1) + ' / ' + lbGambar.length;
+    lb.classList.remove('hidden'); lb.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () {
+      lb.style.opacity = '1';
+      img.style.transform = 'scale(1)';
+      img.style.opacity = '1';
+    });
+    updateNav();
+  }
+
+  function tutupLightbox() {
+    var lb = document.getElementById('lightbox');
+    var img = document.getElementById('lightboxImg');
+    if (!lb || lb.classList.contains('hidden')) return;
+    lb.style.opacity = '0';
+    img.style.transform = 'scale(0.92)';
+    img.style.opacity = '0';
+    setTimeout(function () {
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+      img.src = '';
+      document.body.style.overflow = '';
+    }, 260);
+  }
+
+  function navigasiLightbox(arah) {
+    var img = document.getElementById('lightboxImg');
+    img.style.transform = 'scale(0.92)';
+    img.style.opacity = '0';
+    lbIndex = (lbIndex + arah + lbGambar.length) % lbGambar.length;
+    setTimeout(function () {
+      img.src = lbGambar[lbIndex].src;
+      document.getElementById('lightboxCaption').textContent = lbGambar[lbIndex].judul;
+      document.getElementById('lightboxCounter').textContent = (lbIndex + 1) + ' / ' + lbGambar.length;
+      img.style.transform = 'scale(1)';
+      img.style.opacity = '1';
+    }, 180);
+    updateNav();
+  }
+
+  function updateNav() {
+    var v = lbGambar.length > 1 ? 'flex' : 'none';
+    document.getElementById('lbPrev').style.display = v;
+    document.getElementById('lbNext').style.display = v;
+  }
+
+  document.addEventListener('keydown', function (e) {
+    var lb = document.getElementById('lightbox');
+    if (!lb || lb.classList.contains('hidden')) return;
+    if (e.key === 'ArrowLeft') navigasiLightbox(-1);
+    if (e.key === 'ArrowRight') navigasiLightbox(1);
+    if (e.key === 'Escape') tutupLightbox();
   });
 </script>
 </html>
